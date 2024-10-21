@@ -1,7 +1,12 @@
 {
   "name": "click-send-nodejs-precompiled",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Non official wrapper for click-send-nodejs that comes precompiled",
+  "homepage": "https://github.com/startswithaj/clicksend-nodejs-precompiled#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/startswithaj/clicksend-nodejs-precompiled.git"
+  },
   "main": "dist/api.js",
   "types": "dist/api.d.ts",
   "scripts": {
@@ -20,7 +25,7 @@
     "bluebird": "^3.7.2",
     "clicksend": "^5.0.79",
     "http": "^0.0.1-security",
-    "request": "^2.88.2",
+    "request": "npm:@cypress/request@^3.0.5",
     "typescript": "^5.6.3"
   }
 }

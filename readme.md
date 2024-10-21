@@ -6,6 +6,12 @@ See this [issue](https://github.com/ClickSend/clicksend-nodejs/issues/10). ¯\_(
 
 This unofficial package simply pulls the package at the version in package.json and compiles it. Still exports the typescript types.
 
+The official package uses `request` which has been unmaintained for 5 years and suffers this [cve](https://github.com/request/request/issues/3442). This package forces it to use `@cypress/request` which is patched.
+
+```
+"request": "npm:@cypress/request@^3.0.5",
+```
+
 ## Usage
 
 ```typescript
@@ -14,13 +20,12 @@ const clickSend = new SMSApi(
   process.env.CLICKSEND_USERNAME!,
   process.env.CLICKSEND_API_KEY!
 );
-const { mobile, message } = props;
 const smsCollection = {
   messages: [
     {
-      from: "Epilog",
-      body: message,
-      to: mobile,
+      from: "from",
+      body: "message",
+      to: "+614...",
     },
   ],
 };
